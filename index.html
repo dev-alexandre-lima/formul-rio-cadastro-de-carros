@@ -11,22 +11,33 @@
         <div class="header">
             <h3>Cadastre seu veículo para vender mais rápido!</h3>
         </div>
-        <form>
-            <div class="form-container">
+        <div class="form-area">
             <div class="form-header">
-                <p>Formulario</p>
+                <h4>Formulário de cadastro de veículos</h4>
             </div>
             <div class="form-body">
-                <h1 class="form-title">Venda fácil o seu carro!</h1>
-                <p>Descreva as característica e marque os opcionais que ele possui.</p>
-                <div class="box-input">
-                    <label for="title">Titulo do anuncio <span class="required-field">*</span></label>
-                    <input type="text" name="title" id="title" class="block" placeholder="Um título para anúnciar seu carro" minlength="1" maxlength="30"
-                    required>
-                </div>
-                <input type="submit" value="Enviar">
-            </div>
-        </form>
+                <form action="process_form.php" method="POST" enctype="multipart/form-data">
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" required>
+
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+
+                    <label for="ano">Ano:</label>
+                    <input type="number" id="ano" name="ano" required>
+
+                    <label for="preco">Preço:</label>
+                    <input type="number" id="preco" name="preco" required>
+
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+                    <label for="foto">Foto do veículo:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*" required>
+
+                    <input type="submit" value="Cadastrar Veículo">
+                </form>
+        </div>
         </div>
     </div>
 </body>
